@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="./node_modules/angular/angular.min.js"></script>
+	<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="data.js"></script>	
+</head>
+<body ng-app="Search">
+	<section ng-controller="Searchcontroller">
+		<div class="list">
+			<div class="box">
+				<form action="">
+					<input type="text" class="inputBox" placeholder="请输入..." ng-keyup="datalistshow=!datalistshow" ng-model="value" ><input type="button" value="搜索" class="searchBtn" ng-click="search(value)">
+					<ul class="radios">
+						<h3>请选择:</h3>
+						<li class="radio" ng-repeat="category in categories"><input type="radio" id="{{category}}" name="radios" ng-click="reflash(category)"><label for="{{category}}">{{category}}</label></li>
+						<div class="cl"></div>
+					</ul>
+					<span>添加分类:</span>
+					<input type="text" ng-model="newType" class="addInput"><input type="button" value="确认" class="addTypeBtn" ng-click="addType()">
+				</form>
+				<div class="datalist" ng-show="datalistshow">
+					<ul>
+						<li ng-repeat="list in lists | filter:value" ng-click="hide(list)">{{list}}</li>
+					</ul>
+				</div>
+				<div class="add" ng-click="add()">{{state}}</div>
+			</div>
+			
+		</div>
+		<div class="content">
+			<div class="showBox" ng-show="show">
+				<h3>{{showTitle}}</h3>
+				<pre>{{showContent}}</pre>
+			</div>
+			<div class="showlist">
+				<ul>
+					<li  ng-repeat="list in lists | filter:value" ng-show="listshow" ng-click="search(list)"><h3>{{list}}</h3><i ng-click="deletelist(list,$index)">x</i></li>
+				</ul>
+			</div>
+			<div class="addBox" ng-show="!show">
+				<h3>标题:</h3>
+				<input type="text" ng-model="title">
+				<h3>内容:</h3>
+				<textarea name="" id="" cols="30" rows="10" ng-model="contents"></textarea><br>
+				<ul class="radios">
+					<h3>请选择分类:</h3>
+					<li class="radio" ng-repeat="category in categories"><input type="radio" id="{{category+'_'}}" name="contentRadios" ng-click="select(category)"><label for="{{category+'_'}}">{{category}}</label></li>
+					<p class="cl"></p>
+				</ul>
+				<input type="button" value="提交" class="subBtn" ng-click="addContents()">
+			</div>
+		</div>
+	</section>
+	<script src="js.js"></script>	
+</body>
+</html>

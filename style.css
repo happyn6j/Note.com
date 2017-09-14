@@ -1,0 +1,175 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+input,button,select,textarea{outline:none}
+body{
+	background: #F6E6CC;
+}
+.cl{
+	clear: both;
+	height: 10px;
+}
+section{
+	width: 800px;
+	height: 500px;
+	background: #fff;
+	border:3px solid #A0CBD2;
+	margin:50px auto;
+	box-shadow: 4px 4px 8px #ccc;
+	border-radius: 10px;
+	position: relative;
+	font-family: "黑体";
+}
+.list{
+	position: absolute;
+	top:0;
+	left:0;
+	width: 210px;
+	height: 460px;
+	background: #abc;
+	border-radius: 7px 0 0 7px;
+	padding: 20px;
+	line-height: 30px;
+	color: #fff;
+}
+.list.box{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.box .inputBox{
+	width: 142px;
+	height: 30px;
+	padding: 0 4px;
+}
+.box .searchBtn,
+.content div.addBox input.subBtn{
+	width: 50px;
+	height: 32px;
+	background: #ccc;
+	color: #fff;
+	text-align: center;
+	border-style: none;
+	cursor: pointer;
+}
+.box .searchBtn:hover,
+.content div.addBox input.subBtn:hover,
+.box .addTypeBtn:hover{
+	background: #aaa;
+}
+.box .datalist{
+	position: absolute;
+    top: 53px;
+    left: 21px;
+}
+.box .datalist ul li{
+	list-style: none;
+	width: 144px;
+	height: 30px;
+	padding: 0 4px;
+	background: #fff;
+	color: blue;
+	border-top: 1px dashed #eee;
+}
+ul{
+	width: 100%;
+}
+ul h3{
+	line-height: 50px;
+}
+ul li.radio{
+	float: left;
+	margin:0 10px;
+	list-style: none;
+}
+ul li.radio input,
+ul li.radio label{
+	cursor: pointer;
+}
+.list .addInput{
+	width: 80px;
+	height: 16px;
+}
+.list .addTypeBtn{
+	width: 40px;
+	height: 18px;
+	border-style: none;
+	color: #fff;
+	background: #ccc;
+	cursor: pointer;
+}
+.list .add{
+	width: 50px;
+	height: 50px;
+	background: #7490AC;
+	border-radius: 50%;
+	font-size: 50px;
+	position: absolute;
+	bottom:40px;
+	left:50%;
+	margin-left: -25px;
+	text-align: center;
+	line-height: 50px;
+	cursor: pointer;
+}
+.content{
+	padding-left: 250px;
+}
+.content div{
+	height: 460px;
+	padding: 20px;
+	color: #8F3D01;
+	line-height: 30px;
+	overflow: scroll;
+}
+.content div.addBox input{
+	width: 100%;
+	height: 26px;
+}
+.content div.addBox textarea{
+	width: 100%;
+	resize: none;
+}
+.content div.addBox ul li{
+	height: 24px;
+}
+.content div.addBox ul li input{
+	width: 12px;
+	height: 12px;
+	line-height: 24px;
+}
+.content div.showlist{
+	height: 440px;
+	padding-top: 40px;
+	position: absolute;
+	right: 0;
+	top:0;
+	/*border-left: 1px dashed #8F3D01;*/
+}
+.content div.showlist ul li{
+	border-bottom:1px dashed #8F3D01;
+	cursor: pointer;
+}
+.content div.showlist ul li h3{
+	display: inline-block;
+}
+.content div.showlist ul li i{
+	width: 20px;
+	height: 20px;
+	font-style: normal;
+	border-radius: 50%;
+	background: #EC191B;
+	color: #fff;
+	line-height: 18px;
+	text-align: center;
+	font-size:18px;
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	top:-2px;
+	left:2px;
+}
+.content div.showBox h3{
+	border-bottom: 1px dashed #8F3D01;
+}
